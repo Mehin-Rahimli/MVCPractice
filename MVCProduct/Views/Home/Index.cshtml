@@ -1,0 +1,59 @@
+﻿@using MVCProduct.Models
+@using MVCProduct.ViewModels
+
+@model ProductViewModel
+
+<ul>
+
+    @foreach (var product in Model.Products)
+    {
+        <li>
+            <img src="@product.Image" alt="@product.Name" style="max-width: 100px; height: auto;" /><br />
+            Name: @product.Name <br />
+            Description: @product.Description <br />
+            Price: @product.Price <br />
+            Discount Price: @product.DiscountPrice<br />
+            Category: @product.Category<br />
+            Color: @product.Color
+        </li>
+    }
+
+
+</ul>
+
+<table border="1">
+
+    <thead>
+        <tr>
+            <th>
+                Price
+            </th>
+
+
+            <th>
+                Name
+            </th>
+
+
+
+            <th>
+                Color
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Product product in Model.Products)
+        {
+
+            <tr>
+                <td>@product.Price</td>
+                <td>@product.Name</td>
+                <td>@product.Color</td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
